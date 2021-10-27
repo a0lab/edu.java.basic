@@ -5,7 +5,7 @@ import java.io.*;
 public class JavaIO {
 
     public void readBytes() throws IOException {
-        byte data[] = new byte[100];
+        byte[] data = new byte[100];
         System.out.println("Enter a line of characters");
         System.in.read(data);
         System.out.println("You entered the below text");
@@ -15,7 +15,7 @@ public class JavaIO {
     }
 
     public void readAndWriteBytes() throws IOException {
-        byte data[] = new byte[100];
+        byte[] data = new byte[100];
         System.out.println("Enter a line of characters");
         System.in.read(data);
         System.out.println("You entered the below text");
@@ -104,5 +104,29 @@ public class JavaIO {
             }
         }
 
+    }
+
+    public void copyFileAutoClose(String sourceFile, String destFile ) {
+//         java <mainClass> test.txt test-copy.txt
+//        if (args.length != 2) {
+//            System.out.println("Usage: java HelloJava <sourceFileName.ext> <destinationFileName.ext>");
+//            return;
+//        }
+//        new JavaIO().copyFileAutoClose(args[0], args[1]);
+
+        int i;
+        try (
+                FileInputStream fileInput = new FileInputStream(sourceFile);
+                FileOutputStream fileOutput = new FileOutputStream(destFile);
+        ) {
+            // read until EOF encountered
+            do {
+                i = fileInput.read();
+                if (i != -1) fileOutput.write(i);
+            } while (i != -1);
+            System.out.println("File copied successfully.");
+        } catch(IOException ex)  {
+            System.out.println("I/O error: " + ex);
+        }
     }
 }

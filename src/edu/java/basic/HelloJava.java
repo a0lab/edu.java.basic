@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.sql.SQLOutput;
 
 public class HelloJava {
-
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 
+		// new JavaIO().readBytes();
 		// new JavaIO().readAndWriteBytes();
 		if (args.length != 2) {
 			System.out.println("Usage: java HelloJava <sourceFileName.ext> <destinationFileName.ext>");
