@@ -5,6 +5,7 @@ import jdk.nashorn.internal.codegen.CompilerConstants;
 
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class HelloJava {
 	
@@ -12,12 +13,18 @@ public class HelloJava {
 
 		// new JavaIO().readBytes();
 		// new JavaIO().readAndWriteBytes();
-		if (args.length != 2) {
-			System.out.println("Usage: java HelloJava <sourceFileName.ext> <destinationFileName.ext>");
-			return;
-		}
-		new JavaIO().copyFile(args[0], args[1]);
+//		if (args.length != 2) {
+//			System.out.println("Usage: java HelloJava <sourceFileName.ext> <destinationFileName.ext>");
+//			return;
+//		}
+//		new JavaIO().copyFile(args[0], args[1]);
 
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the String:");
+
+		String input = scanner.nextLine();
+
+		System.out.println("Reversed String : "+ StringUtil.reverse(input) );
 
 	}
 	// useGreet();
