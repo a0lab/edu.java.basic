@@ -39,6 +39,7 @@ public class DataStructure {
             System.out.println(i+1 +  " " + nameList[i]);
 
         System.out.println("Print array using for each");
+        // Print the list of names with comma separated using for each
         for(String name : nameList) {
             System.out.print(name);
             if (!name.equalsIgnoreCase(nameList[nameList.length-1]))
@@ -47,6 +48,7 @@ public class DataStructure {
         }
         System.out.println();
         System.out.println("Print array using for index");
+        // Print the list of names with comma separated using for index
         for(int i=0; i<nameList.length; i++) {
             System.out.print(nameList[i]);
             if (i != nameList.length-1)
