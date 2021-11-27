@@ -9,10 +9,20 @@ import java.util.Scanner;
 
 public class HelloJava {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        System.out.println("hello");
-        biggestOfArray();
+        Employee emp = new Employee("Sridhar");
+        try {
+            emp.setAge(255);
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+        System.out.println("Employee\n---------");
+        System.out.println("Name: " + emp.name);
+        System.out.println("Age: " + emp.getAge());
 
 
     } /* end of main method */
@@ -30,6 +40,15 @@ public class HelloJava {
     //	ControlStructure cs = new ControlStructure();
     //	cs.doWhileOddOrEven();
 
+    public static void useRectangle() {
+        Rectangle rect = new Rectangle(50, 30);
+        rect.length = 55;
+
+        System.out.println("Rectangle\n---------");
+        System.out.println("Length: " + rect.length);
+        System.out.println("Width: " + rect.width);
+        System.out.println("Area: " + rect.area());
+    }
 
     public static void copyFile(String[] args) {
         //Copy file from arg1 to arg2
@@ -76,7 +95,7 @@ public class HelloJava {
         //System.out.println("Biggest number is " + a[bigIndex]);
 
         int[] bigIndex = ArrayUtil.indexOfBiggestThreeNumbers(a);
-        for (int i=0; i<bigIndex.length; i++) {
+        for (int i = 0; i < bigIndex.length; i++) {
             System.out.print("Biggest element:value is a[" + bigIndex[i] + "]");
             System.out.println(":" + a[bigIndex[i]]);
         }
