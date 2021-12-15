@@ -25,17 +25,25 @@ public class HelloJava {
         Circle c3 = c2;
         c3.name = "c3 Oli vattam";
 
+        float c1area = c1.getArea();
+
         System.out.println("Print Circle class:" + c1.toString());
         System.out.println("Radius:" + c1.radius);
         System.out.println("Name:" + c1.name);
+        System.out.println("Area:" + c1area);
+        System.out.println("Perimeter:" + c1.getPerimeter());
 
         System.out.println("Print Circle class:" + c2.toString());
         System.out.println("Radius:" + c2.radius);
         System.out.println("Name:" + c2.name);
+        System.out.println("Area:" + c2.getArea());
+        System.out.println("Perimeter:" + c2.getPerimeter());
 
         System.out.println("Print Circle class:" + c3.toString());
         System.out.println("Radius:" + c3.radius);
         System.out.println("Name:" + c3.name);
+        System.out.println("Area:" + c3.getArea());
+        System.out.println("Perimeter:" + c3.getPerimeter());
     }
 
 
