@@ -1,20 +1,18 @@
 package edu.java.basic;
 
-public class Circle {
+class Circle {
     int radius;
+    String name;
 
-    // Constructor
+    //Constructor overloading (method overloading - method with same name and different params)
+    //Constructor 1
     Circle(int r) {
         this.radius = r;
+        this.name = "Circle object";
     }
-
-    public float area() {
-        float area = 22f / 7f * radius * radius;
-        return area;
-    }
-
-    public float circumference() {
-        float circum = 2 * 22f / 7f * radius;
-        return  circum;
+    // Constructor 2c
+    Circle(int r, String n) {
+        this.radius = r;
+        this.name = n;
     }
 }

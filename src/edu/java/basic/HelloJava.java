@@ -1,31 +1,45 @@
 package edu.java.basic;
 
-
-import jdk.nashorn.internal.codegen.CompilerConstants;
-
 import java.io.IOException;
 import java.sql.SQLOutput;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class HelloJava {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)  {
 
-        Employee emp = new Employee("Sridhar");
-        try {
-            emp.setAge(255);
-        }
-        catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+//        Scanner s = new Scanner(System.in);
+//        int r = s.nextInt();
+
+        Circle c1 = new Circle(25);
+        Circle c2 = new Circle(35, "c2 ஒளி வட்டம்");
+        Circle c3 = c2;
+        c3.name = "c3 Oli vattam";
+
+        System.out.println("Print Circle class:" + c1.toString());
+        System.out.println("Radius:" + c1.radius);
+        System.out.println("Name:" + c1.name);
+
+        System.out.println("Print Circle class:" + c2.toString());
+        System.out.println("Radius:" + c2.radius);
+        System.out.println("Name:" + c2.name);
+
+        System.out.println("Print Circle class:" + c3.toString());
+        System.out.println("Radius:" + c3.radius);
+        System.out.println("Name:" + c3.name);
+    }
 
 
-        System.out.println("Employee\n---------");
-        System.out.println("Name: " + emp.name);
-        System.out.println("Age: " + emp.getAge());
-
-
-    } /* end of main method */
+    /* end of main method */
 
     // biggestOfArray()
     // biggestOfThree();
@@ -39,6 +53,97 @@ public class HelloJava {
 
     //	ControlStructure cs = new ControlStructure();
     //	cs.doWhileOddOrEven();
+
+    public static void useArrayListAndLinkedList() {
+        ArrayList<String> days = new ArrayList<String>();
+        days.add("Sunday");
+        days.add("Monday");
+        days.add("Tuesday");
+        days.add("Wednesday");
+        days.add("Thursday");
+        days.add("Friday");
+        days.add("Saturday");
+
+
+        System.out.println(days.get(2));
+
+        HashMap<String, String> daysHM1 = new HashMap<String, String>();
+
+        daysHM1.put("Sun","Sunday");
+        daysHM1.put("Mon","Monday");
+        daysHM1.put("Tue","Tuesday");
+        daysHM1.put("Wed","Wednesday");
+        daysHM1.put("Thu","Thursday");
+        daysHM1.put("Fri","Friday");
+        daysHM1.put("Sat","Saturday");
+
+
+        System.out.println(daysHM1.get("Wed"));
+
+        HashMap<Integer, String> daysHM2 = new HashMap<Integer, String>();
+
+        daysHM2.put(1,"Sunday");
+        daysHM2.put(2,"Monday");
+        daysHM2.put(3,"Tuesday");
+        daysHM2.put(4,"Wednesday");
+        daysHM2.put(5,"Thursday");
+        daysHM2.put(6,"Friday");
+        daysHM2.put(7,"Saturday");
+
+
+        System.out.println(daysHM2.get(6));
+
+        System.out.println(days);
+        System.out.println(daysHM1);
+        System.out.println(daysHM2);
+        days.clear();
+        System.out.println(days);
+
+        for (String i : daysHM1.keySet()) {
+            System.out.println(i);
+        }
+
+        for (String i : daysHM1.values()) {
+            System.out.println(i);
+        }
+
+        daysHM1.clear();
+        System.out.println(daysHM1);
+        System.out.println(daysHM2.size());
+
+
+        daysHM2.remove(3);
+        System.out.println(daysHM2);
+        System.out.println(daysHM2.get(13));
+    }
+
+    public static void useTimeZone() {
+        ZonedDateTime tokyoDateTime = ZonedDateTime.now();
+        System.out.println("Before formatting: " + tokyoDateTime);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("E, MMMM dd, yyyy hh:mm:ss a z");
+
+        String formattedDate = tokyoDateTime.format(myFormatObj);
+        System.out.println("After formatting: " + formattedDate);
+
+        //Print date time in India
+        ZonedDateTime india = tokyoDateTime.withZoneSameInstant(ZoneId.of("Asia/Kolkata"));
+        System.out.println("India: " + india);
+        System.out.println("India formatted: " + india.format(myFormatObj));
+    }
+
+    public static void useEmployee() {
+        Employee emp = new Employee("Sridhar");
+        try {
+            emp.setAge(255);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+        System.out.println("Employee\n---------");
+        System.out.println("Name: " + emp.name);
+        System.out.println("Age: " + emp.getAge());
+    }
 
     public static void useRectangle() {
         Rectangle rect = new Rectangle(50, 30);
@@ -171,12 +276,12 @@ public class HelloJava {
     }
 
     public static void useCircle() {
-        Greet g = new Greet();
-        int r = Integer.parseInt(g.readString("Enter radius"));
-
-        Circle c = new Circle(r);
-        System.out.println("Area= " + c.area());
-        System.out.println("Circumference =	" + c.circumference());
+//        Greet g = new Greet();
+//        int r = Integer.parseInt(g.readString("Enter radius"));
+//
+//        Circle c = new Circle(r);
+//        System.out.println("Area= " + c.area());
+//        System.out.println("Circumference =	" + c.circumference());
     }
 
     public static void useStudent() {
