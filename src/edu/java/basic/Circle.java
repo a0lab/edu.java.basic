@@ -1,8 +1,7 @@
 package edu.java.basic;
 
-class Circle {
+class Circle extends Shape {
     int radius;
-    String name;
     final float PI = 22f/7f;
 
     //Constructor overloading (method overloading - method with same name and different params)

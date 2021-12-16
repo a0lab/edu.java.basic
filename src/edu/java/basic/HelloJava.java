@@ -19,7 +19,48 @@ public class HelloJava {
 
 //        Scanner s = new Scanner(System.in);
 //        int r = s.nextInt();
+        Rectangle[] rectArray = new Rectangle[4];
 
+        rectArray[0] = new Rectangle(25,35);
+        rectArray[1]= new Rectangle(35,75, "செவ்வகம்");
+        rectArray[2]= new Rectangle(343,755, "ஸ்ரீதர்");
+        rectArray[3]= new Rectangle(85,934, "உலகநாதன்");
+        //Circle c3 = c2;
+        //c3.name = "c3 Oli vattam";
+
+        //float c1area = c1.getArea();
+        for (Rectangle r: rectArray) {
+            System.out.println("Name:" + r.name);
+            System.out.println("Print Rectangle class:" + r.toString());
+            System.out.println("Length:" + r.length);
+            System.out.println("Width:" + r.width);
+            System.out.println("Area:" + r.getArea());
+            System.out.println("Perimeter:" + r.getPerimeter());
+            System.out.println(r);
+            System.out.println("---------------------------------------------");
+        }
+
+    }
+//        for (Weekday d : Weekday.values()) {
+//            System.out.println("name: " + d);
+//
+//        }
+
+    /* end of main method */
+
+    // biggestOfArray()
+    // biggestOfThree();
+    // useGreet();
+    // useCalculator();
+    // useSlope();
+    // usePyramid();
+    // useStudent();
+
+    // new ControlStructure().doWhileBreakCheckUrl();
+
+    //	ControlStructure cs = new ControlStructure();
+    //	cs.doWhileOddOrEven();
+    public static void useCircle1() {
         Circle c1 = new Circle(25);
         Circle c2 = new Circle(35, "c2 ஒளி வட்டம்");
         Circle c3 = c2;
@@ -45,22 +86,6 @@ public class HelloJava {
         System.out.println("Area:" + c3.getArea());
         System.out.println("Perimeter:" + c3.getPerimeter());
     }
-
-
-    /* end of main method */
-
-    // biggestOfArray()
-    // biggestOfThree();
-    // useGreet();
-    // useCalculator();
-    // useSlope();
-    // usePyramid();
-    // useStudent();
-
-    // new ControlStructure().doWhileBreakCheckUrl();
-
-    //	ControlStructure cs = new ControlStructure();
-    //	cs.doWhileOddOrEven();
 
     public static void useArrayListAndLinkedList() {
         ArrayList<String> days = new ArrayList<String>();
@@ -160,7 +185,7 @@ public class HelloJava {
         System.out.println("Rectangle\n---------");
         System.out.println("Length: " + rect.length);
         System.out.println("Width: " + rect.width);
-        System.out.println("Area: " + rect.area());
+        System.out.println("Area: " + rect.getArea());
     }
 
     public static void copyFile(String[] args) {
