@@ -1,6 +1,6 @@
 package edu.java.basic;
 
 public enum Weekday {
-    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
-    THURSDAY, FRIDAY, SATURDAY
+    Sunday, Monday, Tuesday, Wednesday,
+    Thursday, Friday, Saturday
 }

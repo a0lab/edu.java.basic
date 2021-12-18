@@ -19,6 +19,38 @@ public class HelloJava {
 
 //        Scanner s = new Scanner(System.in);
 //        int r = s.nextInt();
+
+        Triangle[] triArray = new Triangle[4];
+
+        triArray[0]= new Triangle(10, 16, 14, 23);
+        triArray[1]= new Triangle(15, 4, 6, 55, "Jayaraman");
+        triArray[2]= new Triangle(15, 44, 76, 45, "Sridhar");
+        triArray[3]= new Triangle(15, 47, 25, 55, "Ulaganatan");
+
+        for(Triangle tr: triArray){
+                tr.print();
+            }
+
+
+    }
+
+
+    /* end of main method */
+
+    // biggestOfArray()
+    // biggestOfThree();
+    // useGreet();
+    // useCalculator();
+    // useSlope();
+    // usePyramid();
+    // useStudent();
+
+    // new ControlStructure().doWhileBreakCheckUrl();
+
+    //	ControlStructure cs = new ControlStructure();
+    //	cs.doWhileOddOrEven();
+
+    public static void useRectangle2() {
         Rectangle[] rectArray = new Rectangle[4];
 
         rectArray[0] = new Rectangle(25,35);
@@ -39,28 +71,9 @@ public class HelloJava {
             System.out.println(r);
             System.out.println("---------------------------------------------");
         }
-
     }
-//        for (Weekday d : Weekday.values()) {
-//            System.out.println("name: " + d);
-//
-//        }
 
-    /* end of main method */
-
-    // biggestOfArray()
-    // biggestOfThree();
-    // useGreet();
-    // useCalculator();
-    // useSlope();
-    // usePyramid();
-    // useStudent();
-
-    // new ControlStructure().doWhileBreakCheckUrl();
-
-    //	ControlStructure cs = new ControlStructure();
-    //	cs.doWhileOddOrEven();
-    public static void useCircle1() {
+    public static void useCircle2() {
         Circle c1 = new Circle(25);
         Circle c2 = new Circle(35, "c2 ஒளி வட்டம்");
         Circle c3 = c2;

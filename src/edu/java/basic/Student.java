@@ -1,7 +1,10 @@
 package edu.java.basic;
 
 public class Student {
-    private String name;
+    public String name;
+    public Weekday birthDay;
+    public Gender gender;
+
 
     Student(String name) {
         this.name = name;
@@ -43,4 +46,9 @@ public class Student {
             return "Fail";
         }
     }
+
+    public String toString() {
+        return this.name + "\t" + this.birthDay + "\t" + this.gender;
+    }
+
 }
