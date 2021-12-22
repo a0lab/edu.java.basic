@@ -1,37 +1,18 @@
 package edu.java.basic;
+import io.jpm.bm.util.MagicNumber;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class HelloJava {
 
     public static void main(String[] args)  {
-
-//        Scanner s = new Scanner(System.in);
-//        int r = s.nextInt();
-
-        Triangle[] triArray = new Triangle[4];
-
-        triArray[0]= new Triangle(10, 16, 14, 23);
-        triArray[1]= new Triangle(15, 4, 6, 55, "Jayaraman");
-        triArray[2]= new Triangle(15, 44, 76, 45, "Sridhar");
-        triArray[3]= new Triangle(15, 47, 25, 55, "Ulaganatan");
-
-        for(Triangle tr: triArray){
-                tr.print();
-            }
-
-
+        useEnumType();
     }
 
 
@@ -49,6 +30,95 @@ public class HelloJava {
 
     //	ControlStructure cs = new ControlStructure();
     //	cs.doWhileOddOrEven();
+
+    public static void useMagicNumber() {
+        //Convert Number to word
+        Scanner s = new Scanner(System.in);
+        MagicNumber mn = new MagicNumber();
+
+        do {
+            System.out.println("TYPE 0 to EXIT program. Enter NUMBER to Convert:");
+            mn.number = s.nextFloat();
+            System.out.println("---------------------------------------------------------");
+            System.out.println("NUMBER: " + mn.number);
+            System.out.println("WORDS : " + mn.toWord());
+            System.out.println("---------------------------------------------------------");
+        } while (mn.number != 0);
+    }
+
+    public static void useEnumType() {
+
+//        System.out.println("List of India States and it's Capital city");
+//        System.out.println("------------------------------------------");
+//        System.out.println("STATE \t CAPITAL CITY");
+//        System.out.println("------------------------------------------");
+//        int i = 0;
+//        for (IndiaState state: IndiaState.values()) {
+//            System.out.println(state.ordinal()+1 + " " + state + "\t" + state.getCapital());
+//        }
+//        System.out.println("------------------------------------------");
+
+        IndiaState tn = IndiaState.Maharashtra;
+        System.out.println(tn);
+        System.out.println(tn.getCapital());
+        System.out.println(tn.ordinal());
+        System.out.println("Language");
+        switch (tn) {
+            case TamilNadu:
+                System.out.println("Tamil");
+                break;
+            case AndhraPradesh:
+                System.out.println("Telugu");
+                break;
+            case Karnataka:
+                System.out.println("Kannada");
+                break;
+            case Kerala:
+                System.out.println("Malayalam");
+                break;
+            default:
+                System.out.println("Unknown");
+        }
+    }
+
+    public static void useEBCalculator()  {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter account name:");
+        String accountName = s.nextLine();
+        System.out.println("Enter meter reading:");
+        int r = s.nextInt();
+
+        EBCalc eb = new EBCalc(accountName,0);
+
+        eb.printBill();
+        eb.setMeterReading(r);
+        eb.generateBill();
+        eb.printBill();
+
+    }
+
+    public static void useMultiplicationTable() {
+        int n, length;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the Multiplication Table Number");
+        n = input.nextInt();
+        System.out.println("Enter the upto Number");
+        length = input.nextInt();
+        MathTable.printMultiplicationTable(n,length);
+    }
+
+    public static void useTriangle() {
+        Triangle[] triArray = new Triangle[4];
+
+        triArray[0]= new Triangle(10, 16, 14, 23);
+        triArray[1]= new Triangle(15, 4, 6, 55, "Jayaraman");
+        triArray[2]= new Triangle(15, 44, 76, 45, "Sridhar");
+        triArray[3]= new Triangle(15, 47, 25, 55, "Ulaganatan");
+
+        for(Triangle tr: triArray){
+            tr.print();
+        }
+    }
 
     public static void useRectangle2() {
         Rectangle[] rectArray = new Rectangle[4];
@@ -234,21 +304,24 @@ public class HelloJava {
 
 
         int[] a = new int[n];
+        // scan all n numbers
         for (int i = 0; i < n; i++) {
             System.out.println("Enter number " + i + ":");
             a[i] = sc.nextInt();
         }
+        // print all scanned numbers
         for (int i = 0; i < n; i++) {
             System.out.println("Entered number " + i + ":" + a[i]);
         }
-        //int bigIndex = ArrayUtil.indexOfBiggestNumber(a);
-        //System.out.println("Biggest element is a[" + bigIndex + "]");
-        //System.out.println("Biggest number is " + a[bigIndex]);
 
-        int[] bigIndex = ArrayUtil.indexOfBiggestThreeNumbers(a);
-        for (int i = 0; i < bigIndex.length; i++) {
-            System.out.print("Biggest element:value is a[" + bigIndex[i] + "]");
-            System.out.println(":" + a[bigIndex[i]]);
+        int bigIndex = ArrayUtil.indexOfBiggestNumber(a);
+        System.out.println("Biggest element is a[" + bigIndex + "]");
+        System.out.println("Biggest number is " + a[bigIndex]);
+
+        int[] bigIndexArray = ArrayUtil.indexOfBiggestThreeNumbers(a);
+        for (int i = 0; i < bigIndexArray.length; i++) {
+            System.out.print("Biggest element:value is a[" + bigIndexArray[i] + "]");
+            System.out.println(":" + a[bigIndexArray[i]]);
         }
     }
 
