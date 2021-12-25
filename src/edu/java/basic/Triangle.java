@@ -35,8 +35,7 @@ public class Triangle extends Shape implements ShapeOperations {
 
     @Override
     public void print() {
-        System.out.println("Name = " + this.name);
-        System.out.println("Print Triangle Class = " + this.toString());
+        System.out.println("Class ID:" + this.toString());
         System.out.println("length = " + this.b);
         System.out.println("height = " + this.h);
         System.out.println("Area = " + this.getArea());

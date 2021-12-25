@@ -25,12 +25,15 @@ class Circle extends Shape implements ShapeOperations {
         float perimeter = 2 * this.PI * this.radius;
         return perimeter;
     }
+    @Override
+    public String toString(){
+        return super.toString() + "\nClass Name: Circle";
+    }
 
     @Override
     public void print() {
-        System.out.println("Print Circle class:" + this.toString());
+        System.out.println("Class ID:" + this.toString());
         System.out.println("Radius:" + this.radius);
-        System.out.println("Name:" + this.name);
         System.out.println("Area:" + this.getArea());
         System.out.println("Perimeter:" + this.getPerimeter());
         System.out.println("---------------------------------------------");

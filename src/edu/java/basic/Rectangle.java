@@ -32,8 +32,7 @@ public class Rectangle extends Shape implements ShapeOperations {
 
     @Override
     public void print() {
-        System.out.println("Name:" + this.name);
-        System.out.println("Print Rectangle class:" + this.toString());
+        System.out.println("Class ID:" + this.toString());
         System.out.println("Length:" + this.length);
         System.out.println("Width:" + this.width);
         System.out.println("Area:" + this.getArea());

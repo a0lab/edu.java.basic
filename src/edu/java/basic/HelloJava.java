@@ -12,7 +12,24 @@ import java.util.Scanner;
 public class HelloJava {
 
     public static void main(String[] args)  {
-        useEnumType();
+
+
+        Integer[] a = {57,86,19,48,72};
+        Float[] b = {57.3f,86.7f,19f,48.9f,72f};
+        String[] s = {"Jayaraman", "Ulaganathan", "Sridhar", "Veera", "Anand"};
+
+        int bigIndex = GArrayUtil.indexOfBiggestNumber(new int[]{ 1,7,9});
+        Float max = GArrayUtil.max(b);
+        Integer min = GArrayUtil.min(a);
+        System.out.println("min:" + min);
+        System.out.println("Max:" + max);
+        System.out.println("String max:" + GArrayUtil.max(s));
+        System.out.println("String min:" + GArrayUtil.min(s));
+
+//        System.out.println("Biggest element is a[" + bigIndex + "]");
+//        System.out.println("Biggest number is " + a[bigIndex]);
+
+
     }
 
 
@@ -30,6 +47,16 @@ public class HelloJava {
 
     //	ControlStructure cs = new ControlStructure();
     //	cs.doWhileOddOrEven();
+
+    public static void examplePolimorphism() {
+        Circle c = new Circle(35, "c2 ஒளி வட்டம்");
+        Triangle t = new Triangle(15, 4, 6, 55, "Jayaraman");
+        Rectangle r = new Rectangle(35,75, "செவ்வகம்");
+
+        c.print();
+        t.print();
+        r.print();
+    }
 
     public static void useMagicNumber() {
         //Convert Number to word
