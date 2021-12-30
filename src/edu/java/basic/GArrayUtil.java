@@ -25,4 +25,12 @@ public class GArrayUtil {
         }
         return small;
     }
+
+    public static <E extends Comparable<E>> void printArray(E[] list) {
+        System.out.print("Print Array { ");
+        for (E element : list) {
+            System.out.print(element + ", ");
+        }
+        System.out.println("}");
+    }
 }

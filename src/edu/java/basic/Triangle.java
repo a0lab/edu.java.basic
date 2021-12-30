@@ -34,13 +34,14 @@ public class Triangle extends Shape implements ShapeOperations {
     }
 
     @Override
-    public void print() {
+    public String print() {
         System.out.println("Class ID:" + this.toString());
         System.out.println("length = " + this.b);
         System.out.println("height = " + this.h);
         System.out.println("Area = " + this.getArea());
         System.out.println("Perimeter = " + this.getPerimeter());
         System.out.println("---------------------------------------------");
+        return "";
     }
 
 }

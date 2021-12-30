@@ -1,17 +1,18 @@
 package edu.java.basic;
 
 class Circle extends Shape implements ShapeOperations {
-    int radius;
+    float radius;
     final float PI = 22f/7f;
+
 
     //Constructor overloading (method overloading - method with same name and different params)
     //Constructor 1
-    Circle(int r) {
+    Circle(float r) {
         this.radius = r;
         this.name = "Circle object";
     }
     // Constructor 2
-    Circle(int r, String n) {
+    Circle(float r, String n) {
         this.radius = r;
         this.name = n;
     }
@@ -31,11 +32,13 @@ class Circle extends Shape implements ShapeOperations {
     }
 
     @Override
-    public void print() {
-        System.out.println("Class ID:" + this.toString());
-        System.out.println("Radius:" + this.radius);
-        System.out.println("Area:" + this.getArea());
-        System.out.println("Perimeter:" + this.getPerimeter());
-        System.out.println("---------------------------------------------");
+    public String print() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nClass ID:" + this.toString());
+        sb.append("\nRadius:" + this.radius);
+        sb.append("\nArea:" + this.getArea());
+        sb.append("\nPerimeter:" + this.getPerimeter());
+        sb.append("\n---------------------------------------------");
+        return sb.toString();
     }
 }

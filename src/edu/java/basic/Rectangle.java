@@ -31,14 +31,16 @@ public class Rectangle extends Shape implements ShapeOperations {
     }
 
     @Override
-    public void print() {
-        System.out.println("Class ID:" + this.toString());
-        System.out.println("Length:" + this.length);
-        System.out.println("Width:" + this.width);
-        System.out.println("Area:" + this.getArea());
-        System.out.println("Perimeter:" + this.getPerimeter());
-        System.out.println(this);
-        System.out.println("---------------------------------------------");
+    public String print() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nClass ID:" + this.toString());
+        sb.append("\nLength:" + this.length);
+        sb.append("\nWidth:" + this.width);
+        sb.append("\nArea:" + this.getArea());
+        sb.append("\nPerimeter:" + this.getPerimeter());
+        sb.append("\n" + this);
+        sb.append("\n---------------------------------------------");
+        return sb.toString();
     }
 
 }

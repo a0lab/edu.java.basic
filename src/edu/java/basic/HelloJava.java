@@ -6,6 +6,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -13,22 +14,8 @@ public class HelloJava {
 
     public static void main(String[] args)  {
 
-
-        Integer[] a = {57,86,19,48,72};
-        Float[] b = {57.3f,86.7f,19f,48.9f,72f};
-        String[] s = {"Jayaraman", "Ulaganathan", "Sridhar", "Veera", "Anand"};
-
-        int bigIndex = GArrayUtil.indexOfBiggestNumber(new int[]{ 1,7,9});
-        Float max = GArrayUtil.max(b);
-        Integer min = GArrayUtil.min(a);
-        System.out.println("min:" + min);
-        System.out.println("Max:" + max);
-        System.out.println("String max:" + GArrayUtil.max(s));
-        System.out.println("String min:" + GArrayUtil.min(s));
-
-//        System.out.println("Biggest element is a[" + bigIndex + "]");
-//        System.out.println("Biggest number is " + a[bigIndex]);
-
+        // useCircle2();
+        useRectangle();
 
     }
 
@@ -47,6 +34,25 @@ public class HelloJava {
 
     //	ControlStructure cs = new ControlStructure();
     //	cs.doWhileOddOrEven();
+
+    public static void useGenericExample() {
+        Integer[] a = {57,86,19,48,72};
+        Float[] b = {57.3f,86.7f,19f,48.9f,72f};
+        String[] s = {"Jayaraman", "Ulaganathan", "Sridhar", "Veera", "Anand"};
+
+        Float max = GArrayUtil.max(b);
+        Integer min = GArrayUtil.min(a);
+        System.out.println("min:" + min);
+        System.out.println("Max:" + max);
+        System.out.println("String max:" + GArrayUtil.max(s));
+        System.out.println("String min:" + GArrayUtil.min(s));
+        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+        System.out.println(Arrays.toString(s));
+        GArrayUtil.printArray(a);
+        GArrayUtil.printArray(b);
+        GArrayUtil.printArray(s);
+    }
 
     public static void examplePolimorphism() {
         Circle c = new Circle(35, "c2 ஒளி வட்டம்");
@@ -172,29 +178,21 @@ public class HelloJava {
 
     public static void useCircle2() {
         Circle c1 = new Circle(25);
-        Circle c2 = new Circle(35, "c2 ஒளி வட்டம்");
+        Circle c2 = new Circle(35.47f, "c2 ஒளி வட்டம்");
         Circle c3 = c2;
         c3.name = "c3 Oli vattam";
 
         float c1area = c1.getArea();
+        String outputString;
+        outputString = c1.print();
+        System.out.println(outputString);
 
-        System.out.println("Print Circle class:" + c1.toString());
-        System.out.println("Radius:" + c1.radius);
-        System.out.println("Name:" + c1.name);
-        System.out.println("Area:" + c1area);
-        System.out.println("Perimeter:" + c1.getPerimeter());
+        System.out.println(c2.print());
+        System.out.println(c3.print());
 
-        System.out.println("Print Circle class:" + c2.toString());
-        System.out.println("Radius:" + c2.radius);
-        System.out.println("Name:" + c2.name);
-        System.out.println("Area:" + c2.getArea());
-        System.out.println("Perimeter:" + c2.getPerimeter());
-
-        System.out.println("Print Circle class:" + c3.toString());
-        System.out.println("Radius:" + c3.radius);
-        System.out.println("Name:" + c3.name);
-        System.out.println("Area:" + c3.getArea());
-        System.out.println("Perimeter:" + c3.getPerimeter());
+        System.out.println("c1 equals c2: " + c1.equals(c2));
+        System.out.println("c1 equals c3: " + c1.equals(c3));
+        System.out.println("c2 equals c3: " + c2.equals(c3));
     }
 
     public static void useArrayListAndLinkedList() {
@@ -296,6 +294,8 @@ public class HelloJava {
         System.out.println("Length: " + rect.length);
         System.out.println("Width: " + rect.width);
         System.out.println("Area: " + rect.getArea());
+
+        System.out.println(rect.print());
     }
 
     public static void copyFile(String[] args) {
