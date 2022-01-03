@@ -5,17 +5,13 @@ import java.io.IOException;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class HelloJava {
 
     public static void main(String[] args)  {
 
-        // useCircle2();
-        useRectangle();
+        useLambdaExample();
 
     }
 
@@ -28,12 +24,29 @@ public class HelloJava {
     // useCalculator();
     // useSlope();
     // usePyramid();
-    // useStudent();
+   // useStudent();
 
     // new ControlStructure().doWhileBreakCheckUrl();
 
     //	ControlStructure cs = new ControlStructure();
     //	cs.doWhileOddOrEven();
+
+    public static void useLambdaExample() {
+        int[] a = {57,86,19,48,72};
+        ArrayList<Integer> l1 = new ArrayList<Integer>();
+        for (int i : a) l1.add(i);
+
+        // Float[] b = {57.3f,86.7f,19f,48.9f,72f};
+        // String[] s = {"Jayaraman", "Ulaganathan", "Sridhar", "Veera", "Anand"};
+
+        int max = ArrayUtil.max(a);
+        System.out.println("Max:" + max);
+        // ArrayUtil.print(a);
+        // ArrayUtil.printWithLabelWithFor(a);
+        // ArrayUtil.printWithLabel(l1);
+        ArrayUtil.printWithLabelUsingLambda(l1);
+
+    }
 
     public static void useGenericExample() {
         Integer[] a = {57,86,19,48,72};
