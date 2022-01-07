@@ -2,6 +2,9 @@ package edu.java.basic;
 import io.jpm.bm.util.MagicNumber;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -11,13 +14,15 @@ public class HelloJava {
 
     public static void main(String[] args)  {
 
-        ArrayListUtil.simpleUseOfArrayList();
+        DateTimeUtil.exampleDateTimeWithFormat();
 
     }
 
 
     /* end of main method */
 
+    // ArrayListUtil.simpleUseOfArrayList();
+    // ArrayListUtil.printUsingIterator();
     // biggestOfArray()
     // biggestOfThree();
     // useGreet();
